@@ -33,6 +33,10 @@ module Google
         def user_info
           parse_json(get(USER_INFO_URL))
         end
+
+        def establish_connection email,password
+          super email,password,"reader"
+        end
         
         private
           # atom parser doesn't bring in google's custom atom fields
